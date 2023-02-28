@@ -1,0 +1,7 @@
+/.idea
+/node_modules
+/schema.prisma
+/test.db
+/__tests__/migrations/
+/prisma-utils.iml
+/.env

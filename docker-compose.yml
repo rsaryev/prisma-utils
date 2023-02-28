@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: test_db
+    ports:
+      - '5433:5432'
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_DATABASE: "test_db"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "password"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_ROOT_HOST: "%"
+
+  cockroachdb:
+    image: cockroachdb/cockroach
+    command: start-single-node --insecure
+    environment:
+      COCKROACH_DATABASE: test_db
+      COCKROACH_USER: root
+      COCKROACH_INSECURE: "true"
+    ports:
+      - '26258:26257'
+      - '8080:8080'
+    volumes:
+      - ./cockroachdb-data:/cockroach/cockroach-data
