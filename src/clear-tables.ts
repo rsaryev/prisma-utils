@@ -57,5 +57,8 @@ export async function clearAllTables(prisma, {
     exclude?: string[],
 }): Promise<void> {
     const clearFn = clearFunctions[provider];
+    if (!clearFn) {
+        throw new Error(`Provider ${provider} is not supported`);
+    }
     await clearFn(prisma, exclude);
 }

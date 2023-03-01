@@ -1,6 +1,6 @@
 {
   "name": "prisma-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "utils for prisma",
   "main": "dist/index.js",
   "author": "rsaryev1997@gmail.com",
