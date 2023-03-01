@@ -1,4 +1,4 @@
-# Utils for [Prisma](https://www.prisma.io/)
+## Utils for [Prisma](https://www.prisma.io/)
 
 ### Install
 ```bash
